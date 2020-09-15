@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo:400,700');
+
+* {
+    user-select: none;
+}
+
+body {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2rem 1fr 2fr 2rem;
+    grid-template-rows: 25vh 10vh 30vh 10vh 25vh;
+    grid-template-areas:
+        ". header . ."
+        ". . anterior ."
+        ". . poemas ."
+        ". . siguiente ."
+        ". . . .";
+}
+
+.instagram {
+    padding: 0.5rem;
+    background-color: #7D00FF;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.instagram:hover {
+    color: #7D00FF;
+    background-color: black;
+}
+
+/** HEADER **/
+.header {
+    grid-area: header;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.header__title {
+    margin: 0;
+}
+
+/** ANTERIOR **/
+.anterior {
+    grid-area: anterior;
+    justify-self: start;
+}
+
+/** SIGUIENTE **/
+.siguiente {
+    grid-area: siguiente;
+    justify-self: end;
+    align-self: end;
+}
+
+.link {
+    opacity: 0;
+    font-family: 'Chivo', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: yellow;
+    cursor: pointer;
+    display: none;
+}
+
+/** POEMAS **/
+.poemas__wrapper {
+    grid-area: poemas;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.poemas__slider {
+    max-height: 100%;
+    overflow: hidden;
+    font-family: 'Chivo', sans-serif;
+}
+
+/* Portada */
+.poemas__portada {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.poemas__sigPortada {
+    color: yellow;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid yellow;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.poemas__sigPortada:hover {
+    padding-bottom: 0.7rem;
+}
+
+/* Poema */
+.poemas__articulo {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poemas__articulo p {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 1000px) {
+    body {
+        grid-template-columns: 2rem 1fr 2rem;
+        grid-template-rows: 30vh 10vh 30vh 10vh 20vh;
+        grid-template-areas:
+            ". header ."
+            ". anterior ."
+            ". poemas ."
+            ". siguiente ."
+            ". . .";
+    }
+
+    .header__title {
+        margin: 0;
+    }
+}
+
+@media(max-width: 800px) {
+    body {
+        grid-template-columns: 2rem 1fr 2rem;
+        grid-template-rows: 20vh 10vh 55vh 10vh 5vh;
+        grid-template-areas:
+            ". header ."
+            ". anterior ."
+            ". poemas ."
+            ". siguiente ."
+            ". . .";
+    }
+
+    .header__title {
+        font-size: 2.5rem;
+    }
+
+    /* Portada */
+    .poemas__portada {
+        height: 55vh;
+        text-align: center;
+    }
+
+    /* Poema */
+    .poemas__articulo {
+        height: 55vh;
+    }
+}
+
+@media(max-width: 500px) {
+    .poemas__tituloPortada {
+        padding: 0rem 4rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media(max-width: 375px) {
+    body {
+        grid-template-columns: 2rem 1fr 2rem;
+        grid-template-rows: 20vh 7.5vh 60vh 7.5vh 5vh;
+        grid-template-areas:
+            ". header ."
+            ". anterior ."
+            ". poemas ."
+            ". siguiente ."
+            ". . .";
+    }
+
+    .header__title {
+        font-size: 2rem;
+    }
+
+    /* Portada */
+    .poemas__portada {
+        height: 60vh;
+    }
+
+    .poemas__tituloPortada {
+        padding: 0rem 2rem;
+    }
+
+    /* Poema */
+    .poemas__articulo {
+        min-height: 60vh;
+        overflow: auto;
+    }
+}

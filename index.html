@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lo que escribí unos días raros, </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name='author' content='marccarranzaferrez@gmail.com'>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel='stylesheet' href="./css/index.css">
+    <script src='./js/jquery.js'></script>
+    <script src='./js/barba.js'></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">pero todo en orden.</h1>
+    </header>
+    <div class='anterior'>
+        <a class='alink link'>Anterior</a>
+    </div>
+    <div class='poemas__wrapper'>
+        <div class='poemas__slider'>
+            <article id='portada' class='poemas__portada'>
+                <p class='poemas__tituloPortada'>Un fanzine de <a href="https://www.instagram.com/helena_barba/" target="_blank" class="instagram">Helena Barba</a></p>
+                <a class='poemas__sigPortada'>Click</a>
+            </article>
+        </div>
+    </div>
+    <div class='siguiente'>
+        <a class='slink link'>Siguiente</a>
+    </div>
+    <script>
+        Module.detectRefresh();
+        Module.detectResize();
+        Module.files();
+        $(document).keydown(function (e) {});
+        $('.poemas__sigPortada').click(function (e) {
+            e.preventDefault();
+            Module.scrollPortada();
+        });
+        $('.alink').click(function (e) {
+            e.preventDefault();
+            Module.scrollTop();
+        });
+        $('.slink').click(function (e) {
+            e.preventDefault();
+            Module.scrollDown();
+        });
+    </script>
+</body>
+
+</html>
